@@ -9,7 +9,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       colorSchemeSeed: Colors.amberAccent,
-      brightness: Brightness.dark
+      brightness: Brightness.light
     );
   }
 }
