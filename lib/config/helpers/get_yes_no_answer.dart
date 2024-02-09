@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:mychat/domain/entities/message.dart';
+import 'package:mychat/infrastructure/models/yes_no_model.dart';
 
 class GetYesNoAnswer {
 
@@ -8,8 +9,8 @@ class GetYesNoAnswer {
   Future<Message> getAnswer () async {
 
     final response = await _dio.get("https://yesno.wtf/api");
-
-    throw UnimplementedError();
-
+    final YesNoModel yesNoModel = YesNoModel.fromJson(response.data);
+    return yesNoModel.toMessageEntity();
   }
+
 }
